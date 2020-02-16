@@ -3,12 +3,13 @@
 from __future__ import unicode_literals
 
 # modify theses
-AUTHOR = 'You'
-SITENAME = 'Stuff I Like'
+AUTHOR = 'Bernard'
+SITENAME = 'Stuff Bernard Likes'
 SITEURL = ''
 LINKS = (  # footer links
     ('made with WIL', 'http://github.com/granitosaurus/wil'),
     ('pelican', 'https://github.com/getpelican/pelican/'),
+    ('blog', 'http://granitosaurus.rocks'),
 )
 
 PATH = 'content'

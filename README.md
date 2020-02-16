@@ -12,7 +12,7 @@ Live example can be found: TODO
 Clone repository and install `pelican`:
 
 ```shell script
-$ git clone https://github.com/Granitosaurus/wil
+$ git clone https://github.com/Granitosaurus/wil@source
 $ pip install pelican[markdown]
 $ cd wil
 ```

@@ -25,6 +25,26 @@ CONFIG = {
     'port': 8000,
 }
 
+
+@task
+def new(c, title, tags, summary):
+    """create new entry"""
+    name = title.lower().replace(' ', '_')
+    body = f"""
+    Title: {title}
+    Date: {datetime.datetime.now().isoformat()} 
+    Tags: {tags}
+    Summary: {summary}
+    Thumb: {name}.jpg
+    """.strip()
+    body = '\n'.join(l.strip() for l in body.split('\n')) + '\n\n'
+    with open(f'content/{title}.md', 'w') as f:
+        f.write(body)
+    print('thumbnail sources:')
+    print(f'  https://duckduckgo.com/?q={title}&iar=images&iax=images&ia=images&iaf=layout%3ASquare')
+    print(f'  https://unsplash.com/s/photos/{title}')
+
+
 @task
 def clean(c):
     """Remove generated files"""
@@ -32,20 +52,24 @@ def clean(c):
         shutil.rmtree(CONFIG['deploy_path'])
         os.makedirs(CONFIG['deploy_path'])
 
+
 @task
 def build(c):
     """Build local version of site"""
     c.run('pelican -s {settings_base}'.format(**CONFIG))
+
 
 @task
 def rebuild(c):
     """`build` with the delete switch"""
     c.run('pelican -d -s {settings_base}'.format(**CONFIG))
 
+
 @task
 def regenerate(c):
     """Automatically regenerate site upon file modification"""
     c.run('pelican -r -s {settings_base}'.format(**CONFIG))
+
 
 @task
 def serve(c):
@@ -62,16 +86,19 @@ def serve(c):
     sys.stderr.write('Serving on port {port} ...\n'.format(**CONFIG))
     server.serve_forever()
 
+
 @task
 def reserve(c):
     """`build`, then `serve`"""
     build(c)
     serve(c)
 
+
 @task
 def preview(c):
     """Build production version of site"""
     c.run('pelican -s {settings_publish}'.format(**CONFIG))
+
 
 @task
 def livereload(c):
@@ -107,4 +134,3 @@ def publish(c):
         '{} {ssh_user}@{ssh_host}:{ssh_path}'.format(
             CONFIG['deploy_path'].rstrip('/') + '/',
             **CONFIG))
-

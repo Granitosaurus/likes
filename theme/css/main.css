@@ -135,6 +135,11 @@ div.main-container {
       font-weight: 300;
       font-size: 32px;
       margin: 0; }
+  div.main-container .summary {
+    hyphens: auto; }
+    div.main-container .summary p {
+      margin-top: 0;
+      margin-bottom: 0; }
 
 footer.index-footer {
   width: 100%;

@@ -13,13 +13,15 @@ Clone repository and install `pelican` for python:
 
 ```shell script
 $ git clone https://github.com/Granitosaurus/wil -b source
-$ pip install pelican[markdown]
 $ cd wil
+$ poetry install
+$ poetry shell
 ```
 
 ## Usage
 
 For detailed usage see official [Pelican documentation][pelican-docs] but as quick overview:
+
 
 1. Create your entries as markdown files in `content` directory following this template:  
     ```markdown
@@ -32,10 +34,11 @@ For detailed usage see official [Pelican documentation][pelican-docs] but as qui
 
     long blog body that can include anything you want as long as it's markdown or html.
     ```  
+      _You can use `invoke new <title> <tags> <summary>` command shortcut._
    
 2. Preview it in your browser:
     ```shell
-    $ make devserver
+    $ invoke livereload
     ```  
     go to [http://localhost:8000](http://localhost:8000)
 
@@ -49,7 +52,7 @@ For detailed usage see official [Pelican documentation][pelican-docs] but as qui
 4. publish the changes:
 
     ```
-    make github
+    invoke github
     ```
 
 5. Enable github pages option in your repository under `repository->settings->options->github pages` and go to http://your_username.github.io/wil

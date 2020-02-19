@@ -4,9 +4,9 @@ import os
 import shutil
 import sys
 import datetime
+from functools import partial
 
 from invoke import task
-from invoke.util import cd
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
@@ -23,6 +23,9 @@ CONFIG = {
     'deploy_path': SETTINGS['OUTPUT_PATH'],
     # Port for `serve`
     'port': 8000,
+    # publishing
+    'github_pages_branch': 'master',
+    'output_dir': 'output',
 }
 
 
@@ -105,23 +108,36 @@ def livereload(c):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server
     build(c)
+    do_build = partial(build, c)
     server = Server()
     # Watch the base settings file
-    server.watch(CONFIG['settings_base'], lambda: build(c))
+    server.watch(CONFIG['settings_base'], do_build)
     # Watch content source files
     content_file_extensions = ['.md', '.rst']
     for extension in content_file_extensions:
-        content_blob = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
-        server.watch(content_blob, lambda: build(c))
+        content_in_cats = '{0}/**/*{1}'.format(SETTINGS['PATH'], extension)
+        root_content = '{0}/*{1}'.format(SETTINGS['PATH'], extension)
+        server.watch(content_in_cats, do_build)
+        server.watch(root_content, do_build)
     # Watch the theme's templates and static assets
     theme_path = SETTINGS['THEME']
-    server.watch('{}/templates/*.html'.format(theme_path), lambda: build(c))
+    server.watch('{}/templates/*.html'.format(theme_path), do_build)
     static_file_extensions = ['.css', '.js']
     for extension in static_file_extensions:
         static_file = '{0}/static/**/*{1}'.format(theme_path, extension)
-        server.watch(static_file, lambda: build(c))
+        server.watch(static_file, do_build)
     # Serve output path on configured port
     server.serve(port=CONFIG['port'], root=CONFIG['deploy_path'])
+
+
+@task
+def github(c):
+    """
+    Publish output to github pages branch
+    """
+    c.run('pelican -s {settings_publish}'.format(**CONFIG))
+    foo = c.run('ghp-import -m "Generating Pelican site" -b {github_pages_branch} {output_dir}'.format(**CONFIG))
+    c.run('git push origin {github_pages_branch}'.format(**CONFIG))
 
 
 @task

@@ -10,6 +10,9 @@ python = "^3.8"
 pelican = "^4.2.0"
 invoke = "^1.4.1"
 pillow = "^7.0.0"  # for thumbnailer plugin
+ghp-import = "^0.5.5"
+livereload = "^2.6.1"
+markdown = "^3.2.1"
 
 [tool.poetry.dev-dependencies]
 

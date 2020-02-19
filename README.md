@@ -1,10 +1,10 @@
-# WIL
+# likes
 
-"What I Like" is a tag-driven static website generator for creating list website of stuff you like.
+"Likes" is a tag-driven static website generator for creating list website of stuff you like.
 
 ![wil screenshot](./wil/screenshot.png)
 
-Live example can be found: [granitosaurus.rocks/wil](http://granitosaurus.rocks/wil)
+Live example can be found: [granitosaurus.rocks/likes](http://granitosaurus.rocks/wil)
 
 
 ## Installing 

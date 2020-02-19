@@ -1,7 +1,7 @@
 Title: Rats
 Date: 2020-02-17
 Tags: pet,nature,animal
-Summary: Rats are absolutely adorable, smart and such fun creatures! I used to have 3 rats and were some of great friends!
+Summary: Rats are absolutely adorable, smart and such fun creatures! I used to have 3 rats and were some of the best friends I've had!
 Thumb: rats.jpg
 
 Rats were my first independent adult pets. I've had to lady rats and they were great pets with few big caveats. First I'll start with positives: they are super cute. They would explore, chill, eat and often act very human-like except. For me they were great pets as you can have one on your lap and do some work on your laptop or read a book - if you're a house person rats can really fit into your workflow!

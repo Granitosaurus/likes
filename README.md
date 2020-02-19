@@ -9,28 +9,36 @@ Live example can be found: [granitosaurus.rocks/wil](http://granitosaurus.rocks/
 
 ## Installing 
 
-Clone repository and install `pelican` for python:
+Click "Use This Template" button on github repository.
+
+Then clone the repository and install dependencies
 
 ```shell script
-$ git clone https://github.com/Granitosaurus/wil -b source
+$ git clone https://github.com/YOU/wil
 $ cd wil
-$ poetry install
+$ poetry install --no-root
 $ poetry shell
+```
+
+Done! You can test it via:
+
+```shell script
+$ invoke livereload
+go to http://localhost:8000
 ```
 
 ## Usage
 
 For detailed usage see official [Pelican documentation][pelican-docs] but as quick overview:
 
-
-1. Create your entries as markdown files in `content` directory following this template:  
+1. Create your entries as markdown files in `content/` directory following this template: 
     ```markdown
     # e.g. this would be /content/snakes.md
     Title: Snakes
     Date: 2020-02-01
     Tags: pet,animal,nature
     Summary: Short summary of the subject
-    Thumb: snake.jpg  # taken from /content/thumb directory
+    Thumb: snake.jpg  # taken from /content/img directory
 
     long blog body that can include anything you want as long as it's markdown or html.
     ```  
@@ -42,20 +50,13 @@ For detailed usage see official [Pelican documentation][pelican-docs] but as qui
     ```  
     go to [http://localhost:8000](http://localhost:8000)
 
-3. set your remote repository:
-
-    ```shell script
-    git remote remove origin
-    git remote add origin <your repo> 
-    ```
-
-4. publish the changes:
+3. publish the site on github:
 
     ```
     invoke github
     ```
 
-5. Enable github pages option in your repository under `repository->settings->options->github pages` and go to http://your_username.github.io/wil
+5. Enable github pages option in your repository under `repository->settings->options->github pages` (select `master` branch) and go to http://your_username.github.io/wil
 
 see `me` branch for real live example.
 

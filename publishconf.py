@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = 'http://granitosaurus.rocks/wil'
+SITEURL = 'http://granitosaurus.rocks/likes'
 RELATIVE_URLS = False
 
 DELETE_OUTPUT_DIRECTORY = True

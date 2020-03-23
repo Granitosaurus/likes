@@ -4,7 +4,7 @@
 
 ![wil screenshot](./wil/screenshot.png)
 
-Live example can be found: [granitosaurus.rocks/likes](http://granitosaurus.rocks/wil)
+Live example can be found: [granitosaurus.rocks/likes](http://granitosaurus.rocks/likes)
 
 
 ## Installing 

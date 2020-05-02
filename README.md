@@ -14,8 +14,8 @@ Click "Use This Template" button on github repository.
 Then clone the repository and install dependencies
 
 ```shell script
-$ git clone https://github.com/YOU/wil
-$ cd wil
+$ git clone https://github.com/YOU/likes
+$ cd likes
 $ poetry install --no-root
 $ poetry shell
 ```
@@ -56,7 +56,7 @@ For detailed usage see official [Pelican documentation][pelican-docs] but as qui
     invoke github
     ```
 
-5. Enable github pages option in your repository under `repository->settings->options->github pages` (select `master` branch) and go to http://your_username.github.io/wil
+5. Enable github pages option in your repository under `repository->settings->options->github pages` (select `master` branch) and go to http://your_username.github.io/likes
 
 see `me` branch for real live example.
 

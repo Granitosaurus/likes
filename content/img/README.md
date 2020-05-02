@@ -1,1 +1,0 @@
-Put images here for thumbnail generation.

@@ -41,7 +41,7 @@ def new(c, title, tags, summary):
     Thumb: {name}.jpg
     """.strip()
     body = '\n'.join(l.strip() for l in body.split('\n')) + '\n\n'
-    with open(f'content/{title}.md', 'w') as f:
+    with open(f"content/{name}.md", 'w') as f:
         f.write(body)
     print('thumbnail sources:')
     print(f'  https://duckduckgo.com/?q={title}&iar=images&iax=images&ia=images&iaf=layout%3ASquare')

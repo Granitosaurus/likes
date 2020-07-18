@@ -32,6 +32,11 @@ html, button, input, select, textarea,
   font-family: $font-family-sans;
 }
 
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 
 .post-date {
   float: right;

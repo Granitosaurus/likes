@@ -13,6 +13,10 @@ html, button, input, select, textarea,
 .pure-g [class*="pure-u"] {
   font-family: "Open Sans", jaf-bernino-sans, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
+iframe {
+  display: block;
+  margin: 0 auto; }
+
 .post-date {
   float: right;
   color: inherit;
@@ -61,7 +65,6 @@ div.post-content, div.entry-content {
     @media screen and (min-width: 35.5em) {
       div.post-content hr, div.entry-content hr {
         width: 50%; } }
-
 div.navigation {
   text-align: left;
   max-width: 1000px;
@@ -306,13 +309,11 @@ div.article-header-container div.background-image-container div.background-image
     @media screen and (min-width: 35.5em) {
       div.article-header-container div.background-image-container div.background-image img {
         height: 100%; } }
-
 div.article-header-container div.background-image-container div.background-image-small img {
   max-width: 90%; }
   @media screen and (min-width: 48em) {
     div.article-header-container div.background-image-container div.background-image-small img {
       max-width: 80%; } }
-
 div.article-header-container div.background-image-container div.background-image-small div.title-container {
   width: 100%;
   margin: 20px auto;
@@ -338,7 +339,6 @@ div.article-header-container div.background-image-container div.background-image
     @media screen and (min-width: 35.5em) {
       div.article-header-container div.background-image-container div.background-image-small div.title-container h4 {
         font-size: 32px; } }
-
 .italics {
   font-style: italic; }
 
@@ -377,7 +377,6 @@ div.category-page-container {
     @media screen and (min-width: 35.5em) {
       div.category-page-container div.article-row div.col {
         padding: 20px 15px 20px 15px; } }
-
 div.article-info {
   text-align: left; }
   div.article-info a {
@@ -417,7 +416,6 @@ div.author-page-header div.cover {
   @media screen and (min-width: 48em) {
     div.author-page-header div.cover {
       height: 400px; } }
-
 div.author-page-header div.avatar, div.author-page-header div.avatar-no-cover {
   display: inline-block;
   width: 120px;

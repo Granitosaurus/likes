@@ -9,7 +9,7 @@
     <h2>
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
         {{ article.title }}</a>
-      <a class="post-date" title="{{ article.date.isoformat() }}">{{ article.date.isoformat().split('T')[0] }}</a>
+      <span class="post-date" title="{{ article.date.isoformat() }}">{{ article.date.isoformat().split('T')[0] }}</span>
     </h2>
     <div class="tags">
       {% for tag in article.tags %}

@@ -49,6 +49,9 @@
     </div>
     <div class="entry-content">
       <div class="pure-u">
+        {% if not article.skip_summary %}
+        {{article.summary}}
+        {% endif %}
         {{article.content}}
       </div>
     </div>

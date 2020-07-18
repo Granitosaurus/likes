@@ -7,7 +7,7 @@ AUTHOR = 'Bernard'
 SITENAME = 'Stuff Bernard Likes'
 SITEURL = ''
 LINKS = (  # footer links
-    ('made with WIL', 'http://github.com/granitosaurus/wil'),
+    ('made with "likes"', 'http://github.com/granitosaurus/likes'),
     ('pelican', 'https://github.com/getpelican/pelican/'),
     ('blog', 'http://granitosaurus.rocks'),
 )
